@@ -1,14 +1,17 @@
 .container{
     width:100%;
+    display: flex;
+    justify-content: center;
 }
 
 .board-container{
-    width:600px;
+    /* width:600px; */
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     gap:5px;
-    margin:0 auto;
+    /* margin:0 auto; */
+    
 }
 
 .gameCell{
@@ -17,6 +20,19 @@
     font-weight: bold;
     text-align: center;
     padding: 18px 0;
+}
+
+.results{
+    text-align: center;
+    padding:25px;
+}
+
+#vs{
+    font-size: 2em;
+}
+
+.no-click{
+    pointer-events: none;
 }
 
 

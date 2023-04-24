@@ -1,5 +1,6 @@
-const board = [];
+let board = [];
 const gridBoard = document.querySelector('.board-container');
+const winnerText = document.getElementById('winner-announce');
 
  /*
    
@@ -25,15 +26,18 @@ const gridBoard = document.querySelector('.board-container');
         [1,5,9]
     ]
 
-    function gameWon(){
+    function gameWon(player){
         console.log(`Game Won!!!`);
+        winnerText.textContent = `Winner is ${player}!`;
+        gridBoard.classList.add('no-click');
+        board = [];
     }
 
-    function checkWin(mark){
+    function checkWin(mark, player){
 
         winCombinations.forEach(comb => {
-            if(board[comb[0]] == mark && board[comb[1]] == mark && board[comb[2]]){
-                console.log(`WINNER`);
+            if(board[comb[0]] === mark && board[comb[1]] === mark && board[comb[2]] === mark){
+                gameWon(player);
             }
         })
    }
@@ -64,7 +68,7 @@ function playRound(e){
 
         board[cell] = "X";
 
-        checkWin("X");
+        checkWin("X", 'Player One');
 
         currentPlayer = "PlayerTwo";
     }else{
@@ -77,7 +81,7 @@ function playRound(e){
 
         board[cell] = "O";
 
-        checkWin("O");
+        checkWin("O", "Player Two");
     }
 
     /* console.log(board); */
