@@ -31,7 +31,6 @@ const winCombinations = [
         board = [];
         gridBoard.classList.remove('no-click');
         winnerText.textContent = '';
-             
         currentPlayer = playerOne.name;
     }
 
@@ -58,7 +57,7 @@ const winCombinations = [
         })
    }
 
-   function renderBoard(id, marker){
+   function renderMarker(id, marker){
        document.getElementById(id).textContent = marker;
    }
 
@@ -70,7 +69,7 @@ const winCombinations = [
 
         if(board[cell] != undefined)return;
 
-        renderBoard(cell, playerOne.token);
+        renderMarker(cell, playerOne.token);
 
         board[cell] = "X";
 
@@ -81,7 +80,7 @@ const winCombinations = [
 
         if(board[cell] != undefined)return;
 
-        renderBoard(cell, playerTwo.token);
+        renderMarker(cell, playerTwo.token);
         
         currentPlayer = 'PlayerOne';
 
