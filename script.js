@@ -1,3 +1,5 @@
+
+
 let board = [];
 const gridBoard = document.querySelector('.board-container');
 const winnerText = document.getElementById('winner-announce');
@@ -13,7 +15,7 @@ const playerTwo = {
     token: "O"
 }
 
-let currentPlayer = playerOne.name;
+let currentPlayer = "PlayerOne";
 
 const winCombinations = [
         [1,2,3],
@@ -25,6 +27,9 @@ const winCombinations = [
         [7,5,3],
         [1,5,9]
     ]
+
+    
+
 
     function resetGame(){
         clearCells();
